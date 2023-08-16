@@ -198,7 +198,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: core-registrty-cadt-linux-x64
+          - name: core-registry-cadt-linux-x64
             platform: amd64
           - name: core-registry-cadt-linux-arm64
             platform: arm64
