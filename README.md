@@ -22,7 +22,7 @@ Please see the [Core Registry CADT RPC API Guide](docs/cadt_rpc_api.md).
 
 ### Linux
 
-A binary file that can run on all Linux distributions on x86 hardware can be found for each tagged release with the name `cadt-linux-x64-<version>.zip`.  This zip file will extract to the `cadt-linux-64` directory by default, where the `cadt` file can be executed to run the API.  
+A binary file that can run on all Linux distributions on x86 hardware can be found for each tagged release with the name `core-registry-cadt-linux-x64-<version>.zip`.  This zip file will extract to the `core-registry-cadt-linux-64` directory by default, where the `core-registry-cadt` file can be executed to run the API.  
 
 #### Debian-based Linux Distros (Ubuntu, Mint, etc)
 
