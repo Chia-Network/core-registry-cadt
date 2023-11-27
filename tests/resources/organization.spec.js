@@ -3,9 +3,8 @@ import app from '../../src/server';
 import { Organization } from '../../src/models/organizations/index.js';
 import { expect } from 'chai';
 import { prepareDb } from '../../src/database';
-import datalayer from '../../src/datalayer';
 import { pullPickListValues } from '../../src/utils/data-loaders';
-const TEST_WAIT_TIME = datalayer.POLLING_INTERVAL * 2;
+const TEST_WAIT_TIME = 5000 * 2;
 import * as testFixtures from '../test-fixtures';
 
 describe('Orgainzation Resource CRUD', function () {

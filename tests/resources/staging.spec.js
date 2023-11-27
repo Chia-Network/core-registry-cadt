@@ -4,8 +4,7 @@ import newProject from '../test-data/new-project.js';
 import { pullPickListValues } from '../../src/utils/data-loaders';
 import { expect } from 'chai';
 import { prepareDb } from '../../src/database';
-import datalayer from '../../src/datalayer';
-const TEST_WAIT_TIME = datalayer.POLLING_INTERVAL * 2;
+const TEST_WAIT_TIME = 5000 * 2;
 
 describe('Staging Resource CRUD', function () {
   before(async function () {

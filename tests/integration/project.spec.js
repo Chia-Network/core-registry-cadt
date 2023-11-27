@@ -6,8 +6,7 @@ const { expect } = chai;
 import * as testFixtures from '../test-fixtures';
 import { pullPickListValues } from '../../src/utils/data-loaders';
 import { prepareDb } from '../../src/database';
-import datalayer from '../../src/datalayer';
-const TEST_WAIT_TIME = datalayer.POLLING_INTERVAL * 2;
+const TEST_WAIT_TIME = 5000 * 5;
 
 describe('Project Resource Integration Tests', function () {
   let homeOrgUid;

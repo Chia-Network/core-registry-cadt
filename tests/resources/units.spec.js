@@ -6,11 +6,11 @@ import sinon from 'sinon';
 import { Organization } from '../../src/models';
 import app from '../../src/server';
 import * as testFixtures from '../test-fixtures';
-import datalayer from '../../src/datalayer';
 import { prepareDb } from '../../src/database';
 import newUnit from '../test-data/new-unit.js';
+import datalayer from '../../src/datalayer';
 import { pullPickListValues } from '../../src/utils/data-loaders';
-const TEST_WAIT_TIME = datalayer.POLLING_INTERVAL * 2;
+const TEST_WAIT_TIME = 5000 * 2;
 
 describe('Units Resource CRUD', function () {
   before(async function () {

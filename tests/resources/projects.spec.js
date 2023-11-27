@@ -2,7 +2,6 @@ import chai from 'chai';
 import _ from 'lodash';
 import * as testFixtures from '../test-fixtures';
 import sinon from 'sinon';
-import datalayer from '../../src/datalayer';
 const { expect } = chai;
 import newProject from '../test-data/new-project.js';
 import supertest from 'supertest';
@@ -12,7 +11,8 @@ import { pullPickListValues } from '../../src/utils/data-loaders';
 import { Staging, Project } from '../../src/models/index.js';
 import { uuid as uuidv4 } from 'uuidv4';
 import { prepareDb, seedDb, sequelize } from '../../src/database';
-const TEST_WAIT_TIME = datalayer.POLLING_INTERVAL * 2;
+import datalayer from '../../src/datalayer';
+const TEST_WAIT_TIME = 5000 * 2;
 
 describe('Project Resource CRUD', function () {
   afterEach(function () {

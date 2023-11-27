@@ -11,8 +11,7 @@ import {
   Estimation,
 } from '../../src/models';
 
-import datalayer from '../../src/datalayer';
-const TEST_WAIT_TIME = datalayer.POLLING_INTERVAL * 2;
+const TEST_WAIT_TIME = 5000 * 2;
 
 // The node simulator runs on an async process, we are importing
 // the WAIT_TIME constant from the simulator, padding it and waiting for the
