@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import { decodeDataLayerResponse } from '../utils/datalayer-utils';
+import { Simulator } from '../models';
 import { CONFIG } from '../user-config';
 import { logger } from '../logger.js';
 
@@ -60,7 +61,7 @@ const getSubscribedStoreData = async (storeId, retry = 0) => {
   if (!CONFIG().CADT.USE_SIMULATOR) {
     logger.info(`Getting confirmation for ${storeId}.`);
     const storeExistAndIsConfirmed = await dataLayer.getRoot(storeId, true);
-    logger.info(`Store exists and is found ${storeId}.`);
+    logger.info(`Store found in DataLayer: ${storeId}.`);
     if (!storeExistAndIsConfirmed) {
       logger.info(
         `Retrying subscribe to ${storeId}, store not yet confirmed.`,
@@ -108,11 +109,28 @@ const getSubscribedStoreData = async (storeId, retry = 0) => {
 const getRootHistory = (storeId) => {
   if (!CONFIG().CADT.USE_SIMULATOR) {
     return dataLayer.getRootHistory(storeId);
+  } else {
+    return [
+      {
+        confirmed: true,
+        root_hash:
+          '0xs571e7fcf464b3dc1d31a71894633eb47cb9dbdb824f6b4a535ed74f23f32e50',
+        timestamp: 1678518050,
+      },
+      {
+        confirmed: true,
+        root_hash:
+          '0xf571e7fcf464b3dc1d31a71894633eb47cb9dbdb824f6b4a535ed74f23f32e50',
+        timestamp: 1678518053,
+      },
+    ];
   }
 };
 
 const getRootDiff = (storeId, root1, root2) => {
-  if (!CONFIG().CADT.USE_SIMULATOR) {
+  if (CONFIG().CADT.USE_SIMULATOR) {
+    return Simulator.getMockedKvDiffFromStagingTable();
+  } else {
     return dataLayer.getRootDiff(storeId, root1, root2);
   }
 };
