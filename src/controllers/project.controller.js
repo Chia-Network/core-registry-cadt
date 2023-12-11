@@ -131,10 +131,6 @@ export const findAll = async (req, res) => {
       onlyMarketplaceProjects,
     } = req.query;
 
-    //if (!page) {
-    //  return redirectWithDefaultPagination(req, res);
-    //}
-
     let where = orgUid != null && orgUid !== 'all' ? { orgUid } : undefined;
 
     if (filter) {
