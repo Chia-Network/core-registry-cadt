@@ -1,3 +1,7 @@
+## [1.7.2](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.1...1.7.2) (2024-01-13)
+
+
+
 ## [1.7.1](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.6.29...1.7.1) (2024-01-04)
 
 
