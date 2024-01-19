@@ -19,7 +19,7 @@ import { mirrorDBEnabled } from '../database';
 dotenv.config();
 const mutex = new Mutex();
 
-const task = new Task('sync-audit', async () => {
+const task = new Task('sync-registries', async () => {
   if (!mutex.isLocked()) {
     const releaseMutex = await mutex.acquire();
     try {
@@ -98,7 +98,7 @@ const job = new SimpleIntervalJob(
     runImmediately: true,
   },
   task,
-  { id: 'sync-audit', preventOverrun: true },
+  { id: 'sync-registries', preventOverrun: true },
 );
 
 const processJob = async () => {
@@ -192,6 +192,14 @@ async function createTransaction(callback, afterCommitCallbacks) {
     }
   }
 }
+
+const tryParseJSON = (jsonString, defaultValue) => {
+  try {
+    return JSON.parse(jsonString);
+  } catch (error) {
+    return defaultValue;
+  }
+};
 
 const syncOrganizationAudit = async (organization) => {
   try {
@@ -354,86 +362,83 @@ const syncOrganizationAudit = async (organization) => {
         const key = decodeHex(diff.key);
         const modelKey = key.split('|')[0];
 
-        if (!['comment', 'author'].includes(key)) {
-          const auditData = {
-            orgUid: organization.orgUid,
-            registryId: organization.registryId,
-            rootHash: root2.root_hash,
-            type: diff.type,
-            table: modelKey,
-            change: decodeHex(diff.value),
-            onchainConfirmationTimeStamp: root2.timestamp,
-            comment: _.get(
-              JSON.parse(
-                decodeHex(_.get(comment, '[0].value', encodeHex('{}'))),
-              ),
-              'comment',
-              '',
+        const auditData = {
+          orgUid: organization.orgUid,
+          registryId: organization.registryId,
+          rootHash: root2.root_hash,
+          type: diff.type,
+          table: modelKey,
+          change: decodeHex(diff.value),
+          onchainConfirmationTimeStamp: root2.timestamp,
+          comment: _.get(
+            tryParseJSON(
+              decodeHex(_.get(comment, '[0].value', encodeHex('{}'))),
             ),
-            author: _.get(
-              JSON.parse(
-                decodeHex(_.get(author, '[0].value', encodeHex('{}'))),
-              ),
-              'author',
-              '',
+            'comment',
+            '',
+          ),
+          author: _.get(
+            tryParseJSON(
+              decodeHex(_.get(author, '[0].value', encodeHex('{}'))),
             ),
-          };
+            'author',
+            '',
+          ),
+        };
 
-          if (modelKey) {
-            const record = JSON.parse(decodeHex(diff.value));
-            const primaryKeyValue =
-              record[ModelKeys[modelKey].primaryKeyAttributes[0]];
+        if (modelKey && Object.keys(ModelKeys).includes(modelKey)) {
+          const record = JSON.parse(decodeHex(diff.value));
+          const primaryKeyValue =
+            record[ModelKeys[modelKey].primaryKeyAttributes[0]];
 
-            if (diff.type === 'INSERT') {
-              logger.info(`UPSERTING: ${modelKey} - ${primaryKeyValue}`);
-              await ModelKeys[modelKey].upsert(record, {
-                transaction,
-                mirrorTransaction,
-              });
-            } else if (diff.type === 'DELETE') {
-              logger.info(`DELETING: ${modelKey} - ${primaryKeyValue}`);
-              await ModelKeys[modelKey].destroy({
-                where: {
-                  [ModelKeys[modelKey].primaryKeyAttributes[0]]:
-                    primaryKeyValue,
-                },
-                transaction,
-                mirrorTransaction,
-              });
-            }
-
-            if (organization.orgUid === homeOrg?.orgUid) {
-              const stagingUuid = [
-                'unit',
-                'project',
-                'units',
-                'projects',
-              ].includes(modelKey)
-                ? primaryKeyValue
-                : undefined;
-
-              if (stagingUuid) {
-                afterCommitCallbacks.push(async () => {
-                  logger.info(`DELETING STAGING: ${stagingUuid}`);
-                  await Staging.destroy({
-                    where: { uuid: stagingUuid },
-                  });
-                });
-              }
-            }
-          }
-
-          // Create the Audit record
-          await Audit.create(auditData, { transaction, mirrorTransaction });
-          await Organization.update(
-            { registryHash: root2.root_hash },
-            {
-              where: { orgUid: organization.orgUid },
+          if (diff.type === 'INSERT') {
+            logger.info(`UPSERTING: ${modelKey} - ${primaryKeyValue}`);
+            await ModelKeys[modelKey].upsert(record, {
               transaction,
               mirrorTransaction,
-            },
-          );
+            });
+          } else if (diff.type === 'DELETE') {
+            logger.info(`DELETING: ${modelKey} - ${primaryKeyValue}`);
+            await ModelKeys[modelKey].destroy({
+              where: {
+                [ModelKeys[modelKey].primaryKeyAttributes[0]]: primaryKeyValue,
+              },
+              transaction,
+              mirrorTransaction,
+            });
+          }
+
+          if (organization.orgUid === homeOrg?.orgUid) {
+            const stagingUuid = [
+              'unit',
+              'project',
+              'units',
+              'projects',
+            ].includes(modelKey)
+              ? primaryKeyValue
+              : undefined;
+
+            if (stagingUuid) {
+              afterCommitCallbacks.push(async () => {
+                logger.info(`DELETING STAGING: ${stagingUuid}`);
+                await Staging.destroy({
+                  where: { uuid: stagingUuid },
+                });
+              });
+            }
+          }
         }
+
+        // Create the Audit record
+        await Audit.create(auditData, { transaction, mirrorTransaction });
+        await Organization.update(
+          { registryHash: root2.root_hash },
+          {
+            where: { orgUid: organization.orgUid },
+            transaction,
+            mirrorTransaction,
+          },
+        );
       }
     };
 
