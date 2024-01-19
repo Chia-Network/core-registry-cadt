@@ -1,3 +1,34 @@
+## [1.7.3](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.2...1.7.3) (2024-01-19)
+
+
+### Bug Fixes
+
+* clear pending root if detected on push ([360abcd](https://github.com/Chia-Network/Core-Registry-CADT/commit/360abcd92650d88a70897f53cb852c3114d8d6d9))
+* get mirror url ([fd23cf5](https://github.com/Chia-Network/Core-Registry-CADT/commit/fd23cf56cdba799ccd6879c4c8ad233d5fdec321))
+* malformed get_value rpc url ([ff9b703](https://github.com/Chia-Network/Core-Registry-CADT/commit/ff9b70382074c0a4aa32edaa2232f5b9770c6178))
+* malformed get_value rpc url ([c34c410](https://github.com/Chia-Network/Core-Registry-CADT/commit/c34c4104227b41b7c696666ce40565ccbb25ad36))
+* missing syntax ([00bbfc6](https://github.com/Chia-Network/Core-Registry-CADT/commit/00bbfc6b737fcae412158d1e9ddcdd2d68e83741))
+* optimize retry logic of subscribe ([8149f85](https://github.com/Chia-Network/Core-Registry-CADT/commit/8149f8550a9146974b7dbb3650ec3398f748fff3))
+* properly name registries task ([71dd7d1](https://github.com/Chia-Network/Core-Registry-CADT/commit/71dd7d1389cbb0d67e210712b1349558a2d946ec))
+* remove duplicate renderGovernance ([45b694b](https://github.com/Chia-Network/Core-Registry-CADT/commit/45b694bc69da1758930687d4bd44908635b1d5d9))
+* rename sync audit to sync datalayer ([1f13c17](https://github.com/Chia-Network/Core-Registry-CADT/commit/1f13c17937a8c3037df987c75190869592fd8e8d))
+* rename sync audit to sync datalayer ([d77ee08](https://github.com/Chia-Network/Core-Registry-CADT/commit/d77ee08a07bc805cbe7bb2e9b72fe59298712ac2))
+* rename sync audit to sync datalayer ([0d703cd](https://github.com/Chia-Network/Core-Registry-CADT/commit/0d703cdbb672de4dad577f65cea2db616145220a))
+* test ([0ceba20](https://github.com/Chia-Network/Core-Registry-CADT/commit/0ceba207438768c06b4a717e84a9acd77fb958cf))
+* test ([62f860d](https://github.com/Chia-Network/Core-Registry-CADT/commit/62f860db4f8bf069cfd992998b3f6ca9eb6892a6))
+* test ([64edef2](https://github.com/Chia-Network/Core-Registry-CADT/commit/64edef212f0217713cc3b5965c5ad0244bd7524f))
+
+
+### Features
+
+* add comment author fix ([3fdf623](https://github.com/Chia-Network/Core-Registry-CADT/commit/3fdf6236a934e018a851626e467bb55038e170b4))
+* add mirror check task ([18fa0c7](https://github.com/Chia-Network/Core-Registry-CADT/commit/18fa0c7f9ae25ff651ec4d86e46eb6d3d403451d))
+* add mirror check task ([12ba1b9](https://github.com/Chia-Network/Core-Registry-CADT/commit/12ba1b961f9b8df82248d06a18a734af92fce196))
+* add rendered endpoint for governance ([1bf9df1](https://github.com/Chia-Network/Core-Registry-CADT/commit/1bf9df129a4065f33a6ee0bf7fa41bdb2e43c34f))
+* inventory reports for dlaas bucket ([3539a9c](https://github.com/Chia-Network/Core-Registry-CADT/commit/3539a9c8271bbba2cb43484f1aede30c60a9d4f9))
+
+
+
 ## [1.7.2](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.1...1.7.2) (2024-01-13)
 
 
