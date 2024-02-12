@@ -1,3 +1,19 @@
+## [1.7.4](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.3...1.7.4) (2024-02-12)
+
+
+### Bug Fixes
+
+* deps ([ee1da60](https://github.com/Chia-Network/Core-Registry-CADT/commit/ee1da60a510d9bb5c31ee8efcf05d1305930f98d))
+
+
+### Features
+
+* add status endpoint ([73523c5](https://github.com/Chia-Network/Core-Registry-CADT/commit/73523c5107e1b47cd06328bd6bd78b05440c7fc1))
+* remove legacy config loader ([ab19831](https://github.com/Chia-Network/Core-Registry-CADT/commit/ab198319b2949b9472244915b5914bc9f6472142))
+* select unit ids ([ec04730](https://github.com/Chia-Network/Core-Registry-CADT/commit/ec04730c55c44ebb05bd01c774c8570366809094))
+
+
+
 ## [1.7.3](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.2...1.7.3) (2024-01-19)
 
 
