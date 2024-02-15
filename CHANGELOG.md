@@ -1,3 +1,21 @@
+## [1.7.5](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.4...1.7.5) (2024-02-15)
+
+
+### Bug Fixes
+
+* console.log ([bae219c](https://github.com/Chia-Network/Core-Registry-CADT/commit/bae219c04997fe071ff163a6cee724beb60a171c))
+* dont announce mirror if mirror is null ([bb0e3e1](https://github.com/Chia-Network/Core-Registry-CADT/commit/bb0e3e19d9e0b1efd758a0c9fee53567ed0c16e1))
+* regex validation vulnerability ([0c50f86](https://github.com/Chia-Network/Core-Registry-CADT/commit/0c50f86f6dfab99dba0e5f01c44e8c0dce89bca7))
+* regex validation vulnerability ([1ef65b7](https://github.com/Chia-Network/Core-Registry-CADT/commit/1ef65b77c828b391f3636a4462ea9e41eb2ecf62))
+* timestamp based sort ([de63181](https://github.com/Chia-Network/Core-Registry-CADT/commit/de631818ad020ca979b84a52fc249b7b056c9939))
+
+
+### Features
+
+* index based sync ([58358d7](https://github.com/Chia-Network/Core-Registry-CADT/commit/58358d7b0966e8e6a3224105c5aadc9779f2b185))
+
+
+
 ## [1.7.4](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.3...1.7.4) (2024-02-12)
 
 
