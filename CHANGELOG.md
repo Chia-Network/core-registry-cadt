@@ -1,3 +1,12 @@
+## [1.7.6](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.5...1.7.6) (2024-02-20)
+
+
+### Bug Fixes
+
+* index based sync bug ([fef4534](https://github.com/Chia-Network/Core-Registry-CADT/commit/fef4534f12903ce02ec1689f3e7e1a29b725607c))
+
+
+
 ## [1.7.5](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.4...1.7.5) (2024-02-15)
 
 
