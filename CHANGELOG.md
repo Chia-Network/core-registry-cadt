@@ -1,3 +1,16 @@
+## [1.7.7](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.6...1.7.7) (2024-03-08)
+
+
+### Bug Fixes
+
+* create mirrors without a homeorg ([46fc9b0](https://github.com/Chia-Network/Core-Registry-CADT/commit/46fc9b0dba9690035bbd2fc39f39e73bdd40e034))
+* do not fall back to IP and port if DATALAYER_FILE_SERVER_URL is not set ([0e98d34](https://github.com/Chia-Network/Core-Registry-CADT/commit/0e98d3454fa8a3f101b6fa034e35da770eee177a))
+* import path ([6f11812](https://github.com/Chia-Network/Core-Registry-CADT/commit/6f1181250ad1148d9cc6ed9cf700bd0f08bdfc14))
+* improved logging messages ([5faf33f](https://github.com/Chia-Network/Core-Registry-CADT/commit/5faf33fd409b8fe126467974eb4bbea65088cd17))
+* mirror logic ([ece1213](https://github.com/Chia-Network/Core-Registry-CADT/commit/ece1213258187e7c811563aed18c4f7b7c64d34d))
+
+
+
 ## [1.7.6](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.5...1.7.6) (2024-02-20)
 
 
