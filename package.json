@@ -1,6 +1,6 @@
 {
   "name": "core-registry-cadt",
-  "version": "1.7.6",
+  "version": "1.7.7",
   "_comment": "DONT CHANGE MAJOR UNLESS DATAMODEL CHANGES: The major version corresponds to the datamodel version your using, so 2.0.0 means it'll use datamodel v2",
   "private": true,
   "bin": "build/server.js",
@@ -74,7 +74,7 @@
     "chai-http": "^4.4.0",
     "eslint": "^8.56.0",
     "eslint-plugin-es": "^4.1.0",
-    "eslint-plugin-mocha": "^10.2.0",
+    "eslint-plugin-mocha": "^10.3.0",
     "husky": "^9.0.11",
     "mocha": "^10.3.0",
     "semver": "^7.6.0",
