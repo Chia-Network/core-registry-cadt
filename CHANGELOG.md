@@ -1,3 +1,19 @@
+## [1.7.8](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.7...1.7.8) (2024-04-08)
+
+
+### Bug Fixes
+
+* remove default onlyTokenizedUnits value ([8ed36a4](https://github.com/Chia-Network/Core-Registry-CADT/commit/8ed36a41b1efad85c71d2b97961f0bbccd63fc3d))
+* test ([58cbbdf](https://github.com/Chia-Network/Core-Registry-CADT/commit/58cbbdfd5b1730e8d2275ec88a15a6a15caf5e67))
+
+
+### Features
+
+* add onlyTokenizedUnits query param ([30b2b89](https://github.com/Chia-Network/Core-Registry-CADT/commit/30b2b8930016ff9cab9db0ad93819f24b7ec8bdb))
+* add untokenized units query params ([93d5526](https://github.com/Chia-Network/Core-Registry-CADT/commit/93d5526afe545ff44fe1c430e14119a01805c722))
+
+
+
 ## [1.7.7](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.6...1.7.7) (2024-03-08)
 
 
