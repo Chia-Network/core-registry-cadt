@@ -1,3 +1,18 @@
+## [1.7.9](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.8...1.7.9) (2024-04-09)
+
+
+### Bug Fixes
+
+* onlyTokenizedUnits equals false ([0ca1ec7](https://github.com/Chia-Network/Core-Registry-CADT/commit/0ca1ec7eb5e7f9c628faa4df7f2bce5787e58dfd))
+* unpaginated xls endpoint ([855c162](https://github.com/Chia-Network/Core-Registry-CADT/commit/855c1627ce754e0affc6e43e1dca37eb7c866edf))
+
+
+### Features
+
+* move pagination limit to 1000 ([f568d28](https://github.com/Chia-Network/Core-Registry-CADT/commit/f568d2837e8fc9394176f1aa18459df65d8d5d39))
+
+
+
 ## [1.7.8](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.7...1.7.8) (2024-04-08)
 
 
