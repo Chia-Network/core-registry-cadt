@@ -1,3 +1,13 @@
+## [1.7.10](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.9...1.7.10) (2024-04-10)
+
+
+### Features
+
+* add rpc request logging to trace level ([8481086](https://github.com/Chia-Network/Core-Registry-CADT/commit/8481086389794640d3e096dea66bc9143b7fd740))
+* remove unneeded extra logging ([b62e61d](https://github.com/Chia-Network/Core-Registry-CADT/commit/b62e61d3125f050b165545a9c73085dc9e80ea9e))
+
+
+
 ## [1.7.9](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.8...1.7.9) (2024-04-09)
 
 
