@@ -1,3 +1,21 @@
+## [1.7.11](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.10...1.7.11) (2024-06-06)
+
+
+### Bug Fixes
+
+* add log ([6fde61f](https://github.com/Chia-Network/Core-Registry-CADT/commit/6fde61f7eb508328bb70cd4b2665108d3e5eeac8))
+* bad import in writeService ([2de2a4e](https://github.com/Chia-Network/Core-Registry-CADT/commit/2de2a4ec0f5e5a93379dac4f299bac429ee8c163))
+* bad references in syncService.js and writeService.js ([3001fd7](https://github.com/Chia-Network/Core-Registry-CADT/commit/3001fd717e413a02e259181f66e936d9e70db4e8))
+* improve log messages to include storeId where possible ([21ed52e](https://github.com/Chia-Network/Core-Registry-CADT/commit/21ed52efa03a4b515c9f31a01e376ece27bab6e9))
+
+
+### Features
+
+* add home profile sync status ([0b3f786](https://github.com/Chia-Network/Core-Registry-CADT/commit/0b3f7869f4595ffc778429caab8d8655e2d8dd26))
+* empty kv-diff sync fix ([b684db5](https://github.com/Chia-Network/Core-Registry-CADT/commit/b684db5f046ce67d585a3b15478b8a6302a15b37))
+
+
+
 ## [1.7.10](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.9...1.7.10) (2024-04-10)
 
 
