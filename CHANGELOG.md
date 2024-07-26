@@ -1,3 +1,12 @@
+## [1.7.12](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.11...1.7.12) (2024-07-26)
+
+
+### Bug Fixes
+
+* undefined AUTO_MIRROR_EXTERNAL_STORESNAL_STORES ([54b9f5f](https://github.com/Chia-Network/Core-Registry-CADT/commit/54b9f5f813f2b81800446c08c5b5e31a66846c49))
+
+
+
 ## [1.7.11](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.10...1.7.11) (2024-06-06)
 
 
