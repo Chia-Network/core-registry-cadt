@@ -1,10 +1,10 @@
-import app from '../../src/server';
+import app from '../../src/server.js';
 import supertest from 'supertest';
 import newProject from '../test-data/new-project.js';
-import { pullPickListValues } from '../../src/utils/data-loaders';
+import { pullPickListValues } from '../../src/utils/data-loaders.js';
 import { expect } from 'chai';
-import { prepareDb } from '../../src/database';
-import datalayer from '../../src/datalayer';
+import { prepareDb } from '../../src/database/index.js';
+import datalayer from '../../src/datalayer/index.js';
 const TEST_WAIT_TIME = datalayer.POLLING_INTERVAL * 2;
 
 describe('Staging Resource CRUD', function () {
@@ -54,6 +54,7 @@ describe('Staging Resource CRUD', function () {
   });
 
   describe('DELETE - Delete a single staging record', function () {
+    // eslint-disable-next-line mocha/no-skipped-tests
     it.skip('Removes the staging record from the staging table', async function () {
       await supertest(app).post('/v1/projects').send(newProject);
       await supertest(app).post('/v1/projects').send(newProject);
@@ -71,6 +72,7 @@ describe('Staging Resource CRUD', function () {
   });
 
   describe('DELETE - Clears the staging table', function () {
+    // eslint-disable-next-line mocha/no-skipped-tests
     it.skip('Clears the staging table', async function () {
       await supertest(app).delete('/v1/staging/clean');
       /// const response = await supertest(app).get('/v1/staging');

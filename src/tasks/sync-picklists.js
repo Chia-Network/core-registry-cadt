@@ -1,11 +1,11 @@
 import { SimpleIntervalJob, Task } from 'toad-scheduler';
-import { pullPickListValues } from '../utils/data-loaders';
+import { pullPickListValues } from '../utils/data-loaders.js';
 import { logger } from '../logger.js';
 import {
   assertDataLayerAvailable,
   assertWalletIsSynced,
-} from '../utils/data-assertions';
-import { CONFIG } from '../user-config';
+} from '../utils/data-assertions.js';
+import { CONFIG } from '../user-config.js';
 
 const task = new Task('sync-picklist', async () => {
   try {

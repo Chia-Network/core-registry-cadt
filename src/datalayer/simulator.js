@@ -1,5 +1,5 @@
 import { uuid as uuidv4 } from 'uuidv4';
-import { Simulator, Organization } from '../models';
+import { Simulator, Organization } from '../models/index.js';
 import { Sequelize } from 'sequelize';
 import { createHash } from 'crypto';
 
@@ -58,7 +58,6 @@ export const getStoreData = async (storeId) => {
   return new Error('Error getting datalayer store data');
 };
 
-// eslint-disable-next-line
 export const getRoot = async (storeId) => {
   const simulatorTable = await Simulator.findAll({ raw: true });
 

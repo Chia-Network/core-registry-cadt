@@ -1,13 +1,13 @@
 import _ from 'lodash';
 import { SimpleIntervalJob, Task } from 'toad-scheduler';
-import { Governance } from '../models';
+import { Governance } from '../models/index.js';
 import {
   assertDataLayerAvailable,
   assertWalletIsSynced,
-} from '../utils/data-assertions';
-import { CONFIG } from '../user-config';
+} from '../utils/data-assertions.js';
+import { CONFIG } from '../user-config.js';
 import { logger } from '../logger.js';
-import { Organization } from '../models';
+import { Organization } from '../models/index.js';
 
 import dotenv from 'dotenv';
 dotenv.config();

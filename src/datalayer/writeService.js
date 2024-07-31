@@ -1,10 +1,10 @@
 import _ from 'lodash';
 
-import * as dataLayer from './persistance';
-import wallet from './wallet';
-import * as simulator from './simulator';
-import { encodeHex, getMirrorUrl } from '../utils/datalayer-utils';
-import { Organization } from '../models';
+import * as dataLayer from './persistance.js';
+import wallet from './wallet.js';
+import * as simulator from './simulator.js';
+import { encodeHex, getMirrorUrl } from '../utils/datalayer-utils.js';
+import { Organization } from '../models/index.js';
 import { CONFIG } from '../user-config.js';
 import { logger } from '../logger.js';
 

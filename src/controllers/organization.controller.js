@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize';
-import { sequelize } from '../database';
-import { Organization } from '../models/organizations';
-import datalayer from '../datalayer';
+import { sequelize } from '../database/index.js';
+import { Organization } from '../models/index.js';
+import datalayer from '../datalayer/index.js';
 
 import {
   assertHomeOrgExists,
@@ -9,11 +9,11 @@ import {
   assertIfReadOnlyMode,
   assertCanDeleteOrg,
   assertNoPendingCommits,
-} from '../utils/data-assertions';
+} from '../utils/data-assertions.js';
 
-import { getDataModelVersion } from '../utils/helpers';
+import { getDataModelVersion } from '../utils/helpers.js';
 
-import { ModelKeys, Audit, Staging } from '../models';
+import { ModelKeys, Audit, Staging } from '../models/index.js';
 
 export const findAll = async (req, res) => {
   return res.json(await Organization.getOrgsMap());
@@ -472,6 +472,7 @@ export const removeMirror = async (req, res) => {
   } catch (error) {
     res.status(400).json({
       message: 'Error removing mirror for organization',
+      error: error.message,
       success: false,
     });
   }

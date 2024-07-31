@@ -3,8 +3,8 @@
 import express from 'express';
 import joiExpress from 'express-joi-validation';
 
-import { AuditController } from '../../../controllers';
-import { auditGetSchema } from '../../../validations';
+import { AuditController } from '../../../controllers/index.js';
+import { auditGetSchema } from '../../../validations/index.js';
 
 const validator = joiExpress.createValidator({ passError: true });
 const AuditRouter = express.Router();

@@ -5,8 +5,8 @@ import { logger } from '../logger.js';
 import mysql from 'mysql2/promise';
 import { CONFIG } from '../user-config.js';
 
-import { migrations } from './migrations';
-import { seeders } from './seeders';
+import { migrations } from './migrations/index.js';
+import { seeders } from './seeders/index.js';
 
 import dotenv from 'dotenv';
 dotenv.config();

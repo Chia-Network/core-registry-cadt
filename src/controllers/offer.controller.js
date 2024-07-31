@@ -1,4 +1,4 @@
-import { Meta, Staging } from '../models';
+import { Meta, Staging } from '../models/index.js';
 
 import {
   assertHomeOrgExists,
@@ -9,12 +9,15 @@ import {
   assertStagingTableIsEmpty,
   assertNoActiveOfferFile,
   assertActiveOfferFile,
-} from '../utils/data-assertions';
+} from '../utils/data-assertions.js';
 
-import { deserializeMaker, deserializeTaker } from '../utils/datalayer-utils';
+import {
+  deserializeMaker,
+  deserializeTaker,
+} from '../utils/datalayer-utils.js';
 
-import * as datalayer from '../datalayer/persistance';
-import { CONFIG } from '../user-config';
+import * as datalayer from '../datalayer/persistance.js';
+import { CONFIG } from '../user-config.js';
 
 export const generateOfferFile = async (req, res) => {
   try {

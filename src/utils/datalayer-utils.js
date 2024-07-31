@@ -1,4 +1,4 @@
-import { CONFIG } from '../user-config';
+import { CONFIG } from '../user-config.js';
 import { logger } from '../logger.js';
 
 export const encodeHex = (str) => {
@@ -117,7 +117,7 @@ export const getMirrorUrl = async () => {
     logger.debug(`Resolved Mirror Url: ${finalUrl}`);
     return finalUrl;
   } catch (error) {
-    logger.error('Error getting mirror url: ${error}');
+    logger.error(`Error getting mirror url: ${error}`);
     return null;
   }
 };

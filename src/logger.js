@@ -1,5 +1,5 @@
 import Logger from '@chia-carbon/core-registry-logger';
-import { CONFIG } from './user-config';
+import { CONFIG } from './user-config.js';
 import packageJson from '../package.json' assert { type: 'json' };
 
 const logger = new Logger({

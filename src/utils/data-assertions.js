@@ -1,9 +1,9 @@
 'use strict';
 
-import { Organization, Unit, Project, Staging, Meta } from '../models';
-import datalayer from '../datalayer';
+import { Organization, Unit, Project, Staging, Meta } from '../models/index.js';
+import datalayer from '../datalayer/index.js';
 import { formatModelAssociationName } from './model-utils.js';
-import { CONFIG } from '../user-config';
+import { CONFIG } from '../user-config.js';
 
 /* deprecated */
 export const assertChiaNetworkMatchInConfiguration = async () => {

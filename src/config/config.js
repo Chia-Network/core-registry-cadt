@@ -1,7 +1,7 @@
-import { CONFIG } from '../user-config';
-import { getDataModelVersion } from '../utils/helpers';
+import { CONFIG } from '../user-config.js';
+import { getDataModelVersion } from '../utils/helpers.js';
 import { getChiaRoot } from 'chia-root-resolver';
-import { APP_DATA_FOLDER_NAME } from '../constants';
+import { APP_DATA_FOLDER_NAME } from '../constants.js';
 
 const chiaRoot = getChiaRoot();
 

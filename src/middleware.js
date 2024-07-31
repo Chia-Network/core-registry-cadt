@@ -4,16 +4,16 @@ import _ from 'lodash';
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import { V1Router } from './routes/v1';
-import { CONFIG } from './user-config';
+import { V1Router } from './routes/v1/index.js';
+import { CONFIG } from './user-config.js';
 import {
   assertChiaNetworkMatchInConfiguration,
   assertDataLayerAvailable,
   assertWalletIsAvailable,
-} from './utils/data-assertions';
+} from './utils/data-assertions.js';
 import packageJson from '../package.json' assert { type: 'json' };
-import datalayer from './datalayer';
-import { Organization } from './models';
+import datalayer from './datalayer/index.js';
+import { Organization } from './models/index.js';
 
 const headerKeys = Object.freeze({
   API_VERSION_HEADER_KEY: 'x-api-version',

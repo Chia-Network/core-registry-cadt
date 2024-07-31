@@ -1,16 +1,16 @@
 import { expect } from 'chai';
 import _ from 'lodash';
-import * as testFixtures from '../test-fixtures';
+import * as testFixtures from '../test-fixtures/index.js';
 import sinon from 'sinon';
-import datalayer from '../../src/datalayer';
+import datalayer from '../../src/datalayer/index.js';
 import newProject from '../test-data/new-project.js';
 import supertest from 'supertest';
-import app from '../../src/server';
-import { Organization } from '../../src/models/organizations/index.js';
-import { pullPickListValues } from '../../src/utils/data-loaders';
+import app from '../../src/server.js';
+import { Organization } from '../../src/models/index.js';
+import { pullPickListValues } from '../../src/utils/data-loaders.js';
 import { Staging, Project } from '../../src/models/index.js';
 import { uuid as uuidv4 } from 'uuidv4';
-import { prepareDb, seedDb, sequelize } from '../../src/database';
+import { prepareDb, seedDb, sequelize } from '../../src/database/index.js';
 const TEST_WAIT_TIME = datalayer.POLLING_INTERVAL * 2;
 
 describe('Project Resource CRUD', function () {
@@ -121,6 +121,7 @@ describe('Project Resource CRUD', function () {
 
   describe('POST Projects - Create', function () {
     describe('error states', function () {
+      // eslint-disable-next-line mocha/no-skipped-tests
       it.skip('errors if no home organization exists', async function () {
         await Organization.destroy({
           where: {},

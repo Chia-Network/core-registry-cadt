@@ -3,13 +3,13 @@ import supertest from 'supertest';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import { Organization } from '../../src/models';
-import app from '../../src/server';
-import * as testFixtures from '../test-fixtures';
-import datalayer from '../../src/datalayer';
-import { prepareDb } from '../../src/database';
+import { Organization } from '../../src/models/index.js';
+import app from '../../src/server.js';
+import * as testFixtures from '../test-fixtures/index.js';
+import datalayer from '../../src/datalayer/index.js';
+import { prepareDb } from '../../src/database/index.js';
 import newUnit from '../test-data/new-unit.js';
-import { pullPickListValues } from '../../src/utils/data-loaders';
+import { pullPickListValues } from '../../src/utils/data-loaders.js';
 const TEST_WAIT_TIME = datalayer.POLLING_INTERVAL * 2;
 
 describe('Units Resource CRUD', function () {
@@ -62,6 +62,7 @@ describe('Units Resource CRUD', function () {
         // ?orgUid=XXXX
       }).timeout(TEST_WAIT_TIME * 10);
 
+      // eslint-disable-next-line mocha/no-skipped-tests
       it.skip('orders by serial number', async function () {
         const newUnit1 = _.cloneDeep(newUnit);
         newUnit1.unitBlockStart = 'AAAAA1';
@@ -164,6 +165,7 @@ describe('Units Resource CRUD', function () {
       }).timeout(TEST_WAIT_TIME * 10);
     });
 
+    // eslint-disable-next-line mocha/no-skipped-tests
     describe.skip('success states', function () {
       it('creates a new unit with no child tables', async function () {
         await testFixtures.createTestHomeOrg();

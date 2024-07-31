@@ -5,17 +5,17 @@ import _ from 'lodash';
 
 const { Model } = Sequelize;
 
-import { sequelize } from '../../database';
+import { sequelize } from '../../database/index.js';
 
-import datalayer from '../../datalayer';
+import datalayer from '../../datalayer/index.js';
 import { logger } from '../../logger.js';
-import { FileStore, Staging } from '../';
+import { FileStore, Staging } from '../index.js';
 
-import { getDefaultOrganizationList } from '../../utils/data-loaders';
+import { getDefaultOrganizationList } from '../../utils/data-loaders.js';
 
-import { getDataModelVersion } from '../../utils/helpers';
+import { getDataModelVersion } from '../../utils/helpers.js';
 
-import { CONFIG } from '../../user-config';
+import { CONFIG } from '../../user-config.js';
 
 import ModelTypes from './organizations.modeltypes.cjs';
 
@@ -219,7 +219,6 @@ class Organization extends Model {
     }
   }
 
-  // eslint-disable-next-line
   static async appendNewRegistry(registryId, dataVersion) {
     const registryVersionId = await datalayer.createDataLayerStore();
     await datalayer.syncDataLayer(registryId, {

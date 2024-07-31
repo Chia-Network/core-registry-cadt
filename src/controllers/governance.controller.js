@@ -1,15 +1,15 @@
 import _ from 'lodash';
 
-import { Governance, Meta } from '../models';
+import { Governance, Meta } from '../models/index.js';
 
 import {
   assertIsActiveGovernanceBody,
   assertIfReadOnlyMode,
   assertWalletIsSynced,
   assertCanBeGovernanceBody,
-} from '../utils/data-assertions';
+} from '../utils/data-assertions.js';
 
-import { CONFIG } from '../user-config';
+import { CONFIG } from '../user-config.js';
 import glossary from '../models/governance/glossary.stub.js';
 import pickList from '../models/governance/governance.stub.js';
 
@@ -165,7 +165,6 @@ export const renderGovernance = async (req, res) => {
   res.send(htmlContent);
 };
 
-// eslint-disable-next-line
 export const createGoveranceBody = async (req, res) => {
   try {
     await assertIfReadOnlyMode();
@@ -188,7 +187,6 @@ export const createGoveranceBody = async (req, res) => {
   }
 };
 
-// eslint-disable-next-line
 export const setDefaultOrgList = async (req, res) => {
   try {
     await assertIfReadOnlyMode();
@@ -215,7 +213,6 @@ export const setDefaultOrgList = async (req, res) => {
   }
 };
 
-// eslint-disable-next-line
 export const setPickList = async (req, res) => {
   try {
     await assertIfReadOnlyMode();

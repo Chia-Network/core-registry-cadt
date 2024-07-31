@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
 import 'regenerator-runtime/runtime.js';
-import rootRouter from './routes';
+import rootRouter from './routes/index.js';
 import http from 'http';
 import { Server } from 'socket.io';
-import { connection } from './websocket';
-import { CONFIG } from './user-config';
+import { connection } from './websocket.js';
+import { CONFIG } from './user-config.js';
 import { logger } from './logger.js';
-import { getMirrorUrl } from './utils/datalayer-utils';
+import { getMirrorUrl } from './utils/datalayer-utils.js';
 
 import dotenv from 'dotenv';
 

@@ -1,11 +1,11 @@
 import { ToadScheduler } from 'toad-scheduler';
 
-import syncDefaultOrganizations from './sync-default-organizations';
-import syncPickLists from './sync-picklists';
-import syncRegistries from './sync-registries';
-import syncOrganizationMeta from './sync-organization-meta';
-import syncGovernanceBody from './sync-governance-body';
-import mirrorCheck from './mirror-check';
+import syncDefaultOrganizations from './sync-default-organizations.js';
+import syncPickLists from './sync-picklists.js';
+import syncRegistries from './sync-registries.js';
+import syncOrganizationMeta from './sync-organization-meta.js';
+import syncGovernanceBody from './sync-governance-body.js';
+import mirrorCheck from './mirror-check.js';
 
 const scheduler = new ToadScheduler();
 

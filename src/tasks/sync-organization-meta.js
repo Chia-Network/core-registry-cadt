@@ -1,10 +1,10 @@
 import { SimpleIntervalJob, Task } from 'toad-scheduler';
-import { Organization } from '../models';
-import { CONFIG } from '../user-config';
+import { Organization } from '../models/index.js';
+import { CONFIG } from '../user-config.js';
 import {
   assertDataLayerAvailable,
   assertWalletIsSynced,
-} from '../utils/data-assertions';
+} from '../utils/data-assertions.js';
 import { logger } from '../logger.js';
 
 import dotenv from 'dotenv';

@@ -1,12 +1,12 @@
 import { SimpleIntervalJob, Task } from 'toad-scheduler';
-import { Organization } from '../models';
+import { Organization } from '../models/index.js';
 import {
   assertDataLayerAvailable,
   assertWalletIsSynced,
-} from '../utils/data-assertions';
-import { logger } from '../logger';
-import { CONFIG } from '../user-config';
-import { getMirrorUrl } from '../utils/datalayer-utils';
+} from '../utils/data-assertions.js';
+import { logger } from '../logger.js';
+import { CONFIG } from '../user-config.js';
+import { getMirrorUrl } from '../utils/datalayer-utils.js';
 import dotenv from 'dotenv';
 
 dotenv.config();

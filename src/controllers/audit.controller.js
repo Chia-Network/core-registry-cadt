@@ -1,9 +1,9 @@
-import { Audit } from '../models';
+import { Audit } from '../models/index.js';
 
 import {
   paginationParams,
   optionallyPaginatedResponse,
-} from '../utils/helpers';
+} from '../utils/helpers.js';
 
 export const findAll = async (req, res) => {
   try {

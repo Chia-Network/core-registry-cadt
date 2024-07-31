@@ -1,6 +1,6 @@
 import superagent from 'superagent';
-import Logger from '@chia-carbon/core-registry-logger';
-import wallet from './datalayer/wallet';
+import Logger from '@chia-carbon/core-registry-logger/index.js';
+import wallet from './datalayer/wallet.js';
 
 const logger = new Logger({
   namespace: 'stress-test',

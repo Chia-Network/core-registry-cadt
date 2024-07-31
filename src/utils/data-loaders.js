@@ -1,8 +1,8 @@
 import _ from 'lodash';
 import superagent from 'superagent';
-import { Governance } from '../models';
+import { Governance } from '../models/index.js';
 import PickListStub from '../models/governance/governance.stub.js';
-import { CONFIG } from '../user-config';
+import { CONFIG } from '../user-config.js';
 import { logger } from '../logger.js';
 
 let downloadedPickList = {};

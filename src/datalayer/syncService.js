@@ -1,12 +1,12 @@
 import _ from 'lodash';
 
-import { decodeDataLayerResponse } from '../utils/datalayer-utils';
-import { Simulator } from '../models';
-import { CONFIG } from '../user-config';
+import { decodeDataLayerResponse } from '../utils/datalayer-utils.js';
+import { Simulator } from '../models/index.js';
+import { CONFIG } from '../user-config.js';
 import { logger } from '../logger.js';
 
-import * as dataLayer from './persistance';
-import * as simulator from './simulator';
+import * as dataLayer from './persistance.js';
+import * as simulator from './simulator.js';
 
 const POLLING_INTERVAL = 5000;
 
