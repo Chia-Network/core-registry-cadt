@@ -36,6 +36,7 @@ export * from './estimations/index.js';
 export * from './audit/index.js';
 export * from './governance/index.js';
 export * from './file-store/index.js';
+export * from './statistics/index.js';
 
 export const ModelKeys = {
   unit: Unit,

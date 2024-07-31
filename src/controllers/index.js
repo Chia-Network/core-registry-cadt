@@ -8,3 +8,4 @@ export * as AuditController from './audit.controller.js';
 export * as GovernanceController from './governance.controller.js';
 export * as FileStoreController from './fileStore.controller.js';
 export * as OfferController from './offer.controller.js';
+export * as StatisticsController from './statistics.controller.js';

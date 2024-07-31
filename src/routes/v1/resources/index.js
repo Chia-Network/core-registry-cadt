@@ -8,3 +8,4 @@ export * from './audit.js';
 export * from './governance.js';
 export * from './filestore.js';
 export * from './offer.js';
+export * from './statistics.js';
