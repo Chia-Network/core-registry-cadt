@@ -2,7 +2,7 @@
 
 import express from 'express';
 
-import { StatisticsController } from '../../../controllers';
+import { StatisticsController } from '../../../controllers/index.js';
 import {
   issuedCarbonByMethodologySchema,
   issuedCarbonByProjectTypeSchema,

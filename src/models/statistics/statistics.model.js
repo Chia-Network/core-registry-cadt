@@ -5,7 +5,7 @@ import { fuzzyStringMatch } from '../../utils/string-utils.js';
 const { Model } = Sequelize;
 import { Unit } from '../units/index.js';
 import Sequelize from 'sequelize';
-import { sequelize } from '../../database';
+import { sequelize } from '../../database/index.js';
 import ModelTypes from './statistics.modeltypes.cjs';
 import { Project } from '../projects/index.js';
 import { Organization } from '../organizations/index.js';
