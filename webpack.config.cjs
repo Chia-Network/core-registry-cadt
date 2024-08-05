@@ -1,8 +1,9 @@
 const path = require('path');
+const glob = require('glob');
 
 module.exports = {
   mode: 'production',
-  entry: './src/server.js', // Update this to the entry point of your application
+  entry: glob.sync('./src/**/*.{js,cjs,mjs}'),
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.cjs',
@@ -24,6 +25,10 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.cjs', 'mjs', 'json'],
+    extensions: ['.js', '.cjs', '.mjs', '.json'],
+    alias: {
+      path: require.resolve('path-browserify'), // required for preferRelative
+    },
+    preferRelative: true,
   },
 };
