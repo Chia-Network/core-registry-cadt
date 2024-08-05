@@ -4,9 +4,16 @@ const jsConfig = require('./jsconfig.json');
 module.exports = {
   include: [/src/, /node_modules/],
   presets: ['@babel/preset-env'],
+  targets: {
+    node: "20.16"
+  },
   plugins: [
-    [
-      '@babel/plugin-syntax-import-attributes',
+    ['@babel/plugin-transform-modules-commonjs',
+      {
+        importInterop: "node"
+      }
+    ],
+    ['@babel/plugin-syntax-import-attributes',
       {
         deprecatedAssertSyntax: true,
       },
@@ -16,6 +23,6 @@ module.exports = {
       {
         root: [path.resolve(jsConfig.compilerOptions.baseUrl)],
       },
-    ],
+    ]
   ],
 };
