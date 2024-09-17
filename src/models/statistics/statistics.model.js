@@ -8,7 +8,7 @@ import Sequelize from 'sequelize';
 import { sequelize } from '../../database';
 import ModelTypes from './statistics.modeltypes.cjs';
 import { Project } from '../projects/index.js';
-import { Organization } from '../organizations/index.js';
+//import { Organization } from '../organizations/index.js';
 import { Issuance } from '../issuances/index.js';
 import _ from 'lodash';
 
@@ -43,7 +43,10 @@ class Statistics extends Model {
     if (cacheResult?.statisticsJsonString) {
       return JSON.parse(cacheResult.statisticsJsonString);
     } else {
-      const homeOrg = await Organization.getHomeOrg();
+      //const homeOrg = await Organization.getHomeOrg();
+      const homeOrg = {
+        orgUid: `1059815727e1039761bb664f6251d19b887df8416d3687535fbddc5d30a0c9ba`,
+      };
 
       const allStatusResults = await Project.findAll({
         attributes: [
@@ -97,7 +100,11 @@ class Statistics extends Model {
     if (cacheResult?.statisticsJsonString) {
       return JSON.parse(cacheResult.statisticsJsonString);
     } else {
-      const homeOrg = await Organization.getHomeOrg();
+      //const homeOrg = await Organization.getHomeOrg();
+      const homeOrg = {
+        orgUid: `1059815727e1039761bb664f6251d19b887df8416d3687535fbddc5d30a0c9ba`,
+        name: 'Eco Registry',
+      };
 
       const currentRegistries = await Project.findAll({
         where: {
@@ -160,7 +167,10 @@ class Statistics extends Model {
     if (cacheResult?.statisticsJsonString) {
       return JSON.parse(cacheResult.statisticsJsonString);
     } else {
-      const homeOrg = await Organization.getHomeOrg();
+      //const homeOrg = await Organization.getHomeOrg();
+      const homeOrg = {
+        orgUid: `1059815727e1039761bb664f6251d19b887df8416d3687535fbddc5d30a0c9ba`,
+      };
       const andConditions = [{ orgUid: homeOrg.orgUid }];
 
       if (
@@ -349,7 +359,10 @@ const getAllMethodologyTonsCo2Count = async (
   vintageYearRangeStart,
   vintageYearRangeEnd,
 ) => {
-  const homeOrg = await Organization.getHomeOrg();
+  //const homeOrg = await Organization.getHomeOrg();
+  const homeOrg = {
+    orgUid: `1059815727e1039761bb664f6251d19b887df8416d3687535fbddc5d30a0c9ba`,
+  };
 
   let methodologyCountQuery = `
         WITH methodology_warehouse_projects AS (
@@ -429,7 +442,10 @@ const getAllProjectTypesTonsCo2Count = async (
   vintageYearRangeStart,
   vintageYearRangeEnd,
 ) => {
-  const homeOrg = await Organization.getHomeOrg();
+  //const homeOrg = await Organization.getHomeOrg();
+  const homeOrg = {
+    orgUid: `1059815727e1039761bb664f6251d19b887df8416d3687535fbddc5d30a0c9ba`,
+  };
 
   let projectCountQuery = `
         WITH project_type_warehouse_projects AS (
@@ -506,7 +522,11 @@ const getAllProjectTypesTonsCo2Count = async (
 };
 
 const getProjectAttributeBasedTonsCo2Count = async (projectSelectors) => {
-  const homeOrg = await Organization.getHomeOrg();
+  //const homeOrg = await Organization.getHomeOrg();
+  const homeOrg = {
+    orgUid: `1059815727e1039761bb664f6251d19b887df8416d3687535fbddc5d30a0c9ba`,
+  };
+
   const { vintageYearRangeStart, vintageYearRangeEnd, ...projectAttributes } =
     projectSelectors;
 
