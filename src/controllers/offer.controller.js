@@ -166,7 +166,16 @@ export const cancelImportedOfferFile = async (req, res) => {
 
 export const getCurrentOfferInfo = async (req, res) => {
   try {
-    await assertActiveOfferFile();
+    try {
+      await assertActiveOfferFile();
+      // eslint-disable-next-line no-unused-vars
+    } catch (error) {
+      res.status(200).json({
+        message: 'No offer to accept',
+        success: true,
+      });
+      return;
+    }
 
     const offerFileJson = await Meta.findOne({
       where: { metaKey: 'activeOffer' },
