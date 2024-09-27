@@ -60,28 +60,35 @@ export const baseSchema = {
   timeStaged: Joi.date().timestamp().allow(null).optional(),
 };
 
-export const projectsGetQuerySchema = Joi.object()
-  .keys({
-    page: Joi.number().min(1),
-    limit: Joi.number().max(1000).min(1),
-    search: Joi.string(),
-    columns: Joi.array().items(Joi.string()).single(),
-    orgUid: Joi.string(),
-    warehouseProjectId: Joi.string(),
-    xls: Joi.boolean(),
-    projectIds: Joi.array().items(Joi.string()).single(),
-    order: Joi.string().regex(genericSortColumnRegex).max(100).min(1),
-    filter: Joi.string().regex(genericFilterRegex).max(100).min(1),
-    onlyMarketplaceProjects: Joi.boolean(),
-  })
-  .when(Joi.object({ xls: Joi.exist() }).unknown(), {
+export const projectsGetQuerySchema = Joi.object({
+  page: Joi.number().optional(),
+  limit: Joi.number().max(1000).min(1).optional(),
+  search: Joi.string().optional(),
+  columns: Joi.array().items(Joi.string()).single().optional(),
+  orgUid: Joi.string().optional(),
+  warehouseProjectId: Joi.string().optional(),
+  xls: Joi.boolean().optional(),
+  projectIds: Joi.array().items(Joi.string()).single().optional(),
+  order: Joi.string().regex(genericSortColumnRegex).optional(),
+  filter: Joi.string().regex(genericFilterRegex).optional(),
+  onlyMarketplaceProjects: Joi.boolean().optional(),
+}).when(
+  Joi.alternatives([
+    Joi.object({ projectIds: Joi.string().required() }).unknown(),
+    Joi.object({ warehouseProjectId: Joi.string().required() }).unknown(),
+    Joi.object({ xls: Joi.string().required() }).unknown(),
+  ]),
+  {
     then: Joi.object({
-      page: Joi.number().min(1).optional(),
-      limit: Joi.number().max(100).min(1).optional(),
+      page: Joi.number().optional(),
+      limit: Joi.number().optional(),
     }),
-  })
-  .with('page', 'limit')
-  .with('limit', 'page');
+    otherwise: Joi.object({
+      page: Joi.number().required(),
+      limit: Joi.number().required(),
+    }),
+  },
+);
 
 export const projectsPostSchema = Joi.object({
   ...baseSchema,
