@@ -45,7 +45,7 @@ class Statistics extends Model {
     } else {
       //const homeOrg = await Organization.getHomeOrg();
       const homeOrg = {
-        orgUid: `1059815727e1039761bb664f6251d19b887df8416d3687535fbddc5d30a0c9ba`,
+        orgUid: `a2194bd3f35268f50a48066a5da428fdc5f136fcf30c468fcf480a1ed0aaa4a1`,
       };
 
       const allStatusResults = await Project.findAll({
@@ -102,7 +102,7 @@ class Statistics extends Model {
     } else {
       //const homeOrg = await Organization.getHomeOrg();
       const homeOrg = {
-        orgUid: `1059815727e1039761bb664f6251d19b887df8416d3687535fbddc5d30a0c9ba`,
+        orgUid: `a2194bd3f35268f50a48066a5da428fdc5f136fcf30c468fcf480a1ed0aaa4a1`,
         name: 'Eco Registry',
       };
 
@@ -169,7 +169,7 @@ class Statistics extends Model {
     } else {
       //const homeOrg = await Organization.getHomeOrg();
       const homeOrg = {
-        orgUid: `1059815727e1039761bb664f6251d19b887df8416d3687535fbddc5d30a0c9ba`,
+        orgUid: `a2194bd3f35268f50a48066a5da428fdc5f136fcf30c468fcf480a1ed0aaa4a1`,
       };
       const andConditions = [{ orgUid: homeOrg.orgUid }];
 
@@ -361,7 +361,7 @@ const getAllMethodologyTonsCo2Count = async (
 ) => {
   //const homeOrg = await Organization.getHomeOrg();
   const homeOrg = {
-    orgUid: `1059815727e1039761bb664f6251d19b887df8416d3687535fbddc5d30a0c9ba`,
+    orgUid: `a2194bd3f35268f50a48066a5da428fdc5f136fcf30c468fcf480a1ed0aaa4a1`,
   };
 
   let methodologyCountQuery = `
@@ -444,7 +444,7 @@ const getAllProjectTypesTonsCo2Count = async (
 ) => {
   //const homeOrg = await Organization.getHomeOrg();
   const homeOrg = {
-    orgUid: `1059815727e1039761bb664f6251d19b887df8416d3687535fbddc5d30a0c9ba`,
+    orgUid: `a2194bd3f35268f50a48066a5da428fdc5f136fcf30c468fcf480a1ed0aaa4a1`,
   };
 
   let projectCountQuery = `
@@ -524,7 +524,7 @@ const getAllProjectTypesTonsCo2Count = async (
 const getProjectAttributeBasedTonsCo2Count = async (projectSelectors) => {
   //const homeOrg = await Organization.getHomeOrg();
   const homeOrg = {
-    orgUid: `1059815727e1039761bb664f6251d19b887df8416d3687535fbddc5d30a0c9ba`,
+    orgUid: `a2194bd3f35268f50a48066a5da428fdc5f136fcf30c468fcf480a1ed0aaa4a1`,
   };
 
   const { vintageYearRangeStart, vintageYearRangeEnd, ...projectAttributes } =
