@@ -159,7 +159,7 @@ class Statistics extends Model {
     }
 
     if (unitTypeList) {
-      uri += `&byUnitType=${unitStatusList}`;
+      uri += `&byUnitType=${unitTypeList}`;
     }
 
     const cacheResult = await Statistics.getCachedResult(uri);
@@ -189,7 +189,7 @@ class Statistics extends Model {
         !unitTypeList.find((status) => status?.toLowerCase() === 'all')
       ) {
         andConditions.push({
-          unitStatus: {
+          unitType: {
             [Sequelize.Op.or]: unitTypeList,
           },
         });
@@ -198,10 +198,10 @@ class Statistics extends Model {
       if (vintageYearRangeStart && vintageYearRangeEnd) {
         andConditions.push({
           vintageYear: {
-            [Sequelize.Op.between]: {
+            [Sequelize.Op.between]: [
               vintageYearRangeStart,
               vintageYearRangeEnd,
-            },
+            ],
           },
         });
       }
@@ -260,7 +260,7 @@ class Statistics extends Model {
 
     let uri = '';
     if (vintageYearRangeStart && vintageYearRangeEnd && methodologies) {
-      uri = `/statistics/issuedCarbonByMethodology?methodologies=${methodologies}vintageYearRangeStart=${vintageYearRangeStart}&vintageYearRangeEnd=${vintageYearRangeEnd}`;
+      uri = `/statistics/issuedCarbonByMethodology?methodologies=${methodologies}&vintageYearRangeStart=${vintageYearRangeStart}&vintageYearRangeEnd=${vintageYearRangeEnd}`;
     } else if (vintageYearRangeStart && vintageYearRangeEnd) {
       uri = `/statistics/issuedCarbonByMethodology?methodologies=${methodologies}`;
     } else {
@@ -552,19 +552,30 @@ const getProjectAttributeBasedTonsCo2Count = async (projectSelectors) => {
     raw: true,
   }).then((issuances) => issuances.map((issuance) => issuance.id));
 
+  const andConditions = [
+    {
+      unitStatus: {
+        [Sequelize.Op.not]: 'Cancelled',
+      },
+    },
+    {
+      issuanceId: {
+        [Sequelize.Op.in]: issuanceIds,
+      },
+    },
+  ];
+
+  if (vintageYearRangeStart && vintageYearRangeEnd) {
+    andConditions.push({
+      vintageYear: {
+        [Sequelize.Op.between]: [vintageYearRangeStart, vintageYearRangeEnd],
+      },
+    });
+  }
+
   const [unitResult] = await Unit.findAll({
     where: {
-      [Sequelize.Op.and]: {
-        unitStatus: {
-          [Sequelize.Op.not]: 'Cancelled',
-        },
-        issuanceId: {
-          [Sequelize.Op.in]: issuanceIds,
-        },
-        vintageYear: {
-          [Sequelize.Op.between]: [vintageYearRangeStart, vintageYearRangeEnd],
-        },
-      },
+      [Sequelize.Op.and]: andConditions,
     },
     attributes: [
       [
