@@ -25,7 +25,7 @@ const subscribeToStoreOnDataLayer = async (storeId) => {
 };
 
 const getSubscribedStoreData = async (storeId) => {
-  const subscriptions = await dataLayer.getSubscriptions(storeId);
+  const { storeIds: subscriptions } = await dataLayer.getSubscriptions(storeId);
   const alreadySubscribed = subscriptions.includes(storeId);
 
   if (!alreadySubscribed) {
@@ -91,7 +91,7 @@ const getRootHistory = (storeId) => {
 };
 
 const getSyncStatus = async (storeId) => {
-  if (!CONFIG().CADT.USE_SIMULATOR) {
+  if (CONFIG().CADT.USE_SIMULATOR) {
     return {
       sync_status: {
         generation: 10000,
