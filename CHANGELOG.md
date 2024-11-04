@@ -1,3 +1,47 @@
+## [1.7.13](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.12...1.7.13) (2024-11-04)
+
+
+### Bug Fixes
+
+* crash due to db error when syncing from scratch ([706960b](https://github.com/Chia-Network/Core-Registry-CADT/commit/706960ba914ebf47a5a032630c2405be71b8e5ca))
+* minor cleanup ([bca5a8f](https://github.com/Chia-Network/Core-Registry-CADT/commit/bca5a8f09fd2d2b58f679ed32b846ca3ba1340fd))
+* package node version ([879df2c](https://github.com/Chia-Network/Core-Registry-CADT/commit/879df2ccdae0cc9da80f9805f443b7d3f5a982a8))
+* testing ([723c05c](https://github.com/Chia-Network/Core-Registry-CADT/commit/723c05ca0ae2439f968025ad91d5692135a698db))
+* uncommitted prettier formatting ([52a3c28](https://github.com/Chia-Network/Core-Registry-CADT/commit/52a3c28384647ad6e136791c69076685a8ad88b2))
+
+
+### Features
+
+* added issuedCo2TonsByProjectType statistics resource ([bd8ea2f](https://github.com/Chia-Network/Core-Registry-CADT/commit/bd8ea2f57da737e5e2c56dc4dbc3d9977f62f0de))
+* added migration task checks ([f242a7a](https://github.com/Chia-Network/Core-Registry-CADT/commit/f242a7adfcd424ec9df3a02f2e361b78150701b4))
+* added migration to create statistics table ([2f916a5](https://github.com/Chia-Network/Core-Registry-CADT/commit/2f916a5d5f5248c98eb2bab456b34b363933628e))
+* added ndc tons calculation ([5eb5665](https://github.com/Chia-Network/Core-Registry-CADT/commit/5eb56651bef4f27fb44967765ef4e74735e172b3))
+* added reset to generation task ([8e27e8a](https://github.com/Chia-Network/Core-Registry-CADT/commit/8e27e8a75b72d9ce77c5ef6713cbe67b1106ce20))
+* added task to check subscriptions and resubscribe to missing org stores ([09d6ad1](https://github.com/Chia-Network/Core-Registry-CADT/commit/09d6ad17b32fc10d3800f6b5105fce12a8c8ead2))
+* added the ability to get tonsCo2 counts for all home org methodologies ([9e6a5d0](https://github.com/Chia-Network/Core-Registry-CADT/commit/9e6a5d0403c38a38b3b3b6f1ae20c5f12be50d5e))
+* added unitCountByStatus resource ([b622ed0](https://github.com/Chia-Network/Core-Registry-CADT/commit/b622ed0417edabd975404c78a4d5b250e92700b4))
+* changed project rehosted functionality to count of projects hosted internally vs externally ([4d76983](https://github.com/Chia-Network/Core-Registry-CADT/commit/4d76983eea8d7bd9870fcac197d24dfa3e3d0c03))
+* code clean up ([126a4d3](https://github.com/Chia-Network/Core-Registry-CADT/commit/126a4d33662b70fe1f6979408034b0589819a429))
+* completed get issuedTonsC02ByMethodology resource ([6e0c223](https://github.com/Chia-Network/Core-Registry-CADT/commit/6e0c2232b6c4afed60f2211baf6627440bf91bea))
+* date range query params now apply to createdAt values instead of updatedAt ([cb45f63](https://github.com/Chia-Network/Core-Registry-CADT/commit/cb45f63a4039f579a0822b763708290e2f41372a))
+* improved sync-registry task and added logging ([0c6b22c](https://github.com/Chia-Network/Core-Registry-CADT/commit/0c6b22ca841903a2210b3a365408f2df7b38924e))
+* latest sync-registry changes from cadt ([4e35237](https://github.com/Chia-Network/Core-Registry-CADT/commit/4e35237bfee6243562da2829b34671febd61e127))
+* mirror check task automatically adds missing governance mirrors ([35fda9a](https://github.com/Chia-Network/Core-Registry-CADT/commit/35fda9a074dfe5a386994ca643678819a3d683c5))
+* mirror check task automatically adds missing governance mirrors ([744bdf9](https://github.com/Chia-Network/Core-Registry-CADT/commit/744bdf9465b3c6a171105de4273fc04e689798e0))
+* modifed controller and model to return statistics for the home org only ([7964384](https://github.com/Chia-Network/Core-Registry-CADT/commit/7964384b8dcc9bff2ef83c87e366487710336360))
+* revised statistics endpoint to accommodate v5 dashboard mocks ([868ff93](https://github.com/Chia-Network/Core-Registry-CADT/commit/868ff93cab4b45634b493cd5b675296e66b6587a))
+* statistics project endpoint ([937c38f](https://github.com/Chia-Network/Core-Registry-CADT/commit/937c38f397fd23b699516174ffc4ce80de8b9b04))
+* testing bug fixes ([6838325](https://github.com/Chia-Network/Core-Registry-CADT/commit/68383251f2dfe989b9b97f6c592efb3f4732213a))
+* updated to node 20 ([8e585d5](https://github.com/Chia-Network/Core-Registry-CADT/commit/8e585d5151386513adb1b6c8bec3c91c519892ff))
+* updated to node 20 ([192e9d6](https://github.com/Chia-Network/Core-Registry-CADT/commit/192e9d65b5a3328cefb1ba54d3602b4702681f2d))
+* verfificationBody not req WIP ([af8d9b3](https://github.com/Chia-Network/Core-Registry-CADT/commit/af8d9b3036be60e073e56c5005d2a7a859c7c90f))
+* verification body not required for issuances ([3640e33](https://github.com/Chia-Network/Core-Registry-CADT/commit/3640e334f59d9b6f4bc8e30b8f3cb313fa5e3565))
+* verification body not required for issuances ([d2e9fc9](https://github.com/Chia-Network/Core-Registry-CADT/commit/d2e9fc97cd8b0db500e8b21e592f63d963ff52c2))
+* wip buffer and retired tons Co2 model, controller, and validations ([9e5462e](https://github.com/Chia-Network/Core-Registry-CADT/commit/9e5462ea34d55c72fc10bf649b2a9673bb46f915))
+* work in progress updated tonsCo2 endpoint to reflect requirements changes ([f2c2e2d](https://github.com/Chia-Network/Core-Registry-CADT/commit/f2c2e2d7c4a51a3ab2e0155d4690b00fa20cb3ad))
+
+
+
 ## [1.7.12](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.11...1.7.12) (2024-07-26)
 
 
