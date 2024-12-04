@@ -1,3 +1,22 @@
+## [1.7.14](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.13...1.7.14) (2024-12-04)
+
+
+### Bug Fixes
+
+* failing tests ([8c53345](https://github.com/Chia-Network/Core-Registry-CADT/commit/8c53345b9bdc0cbd1cea1e020e42c47ab4c907c5))
+* organization meta sync task hanging ([87ea402](https://github.com/Chia-Network/Core-Registry-CADT/commit/87ea402cb60c8b1485448ffb9ba24690a312dd17))
+* restrictive json parser limit. increased to 5mb ([dbaa574](https://github.com/Chia-Network/Core-Registry-CADT/commit/dbaa5748490dd5d81d14f686e0dfe82a2ce56d35))
+
+
+### Features
+
+* sqlite db locking mitigation via organizations.model.js and audit.model.js accessing mutex ([58ae4bd](https://github.com/Chia-Network/Core-Registry-CADT/commit/58ae4bd38d4d000134d022772d3855109b8ee276))
+* sqlite db locking mitigation via organizations.model.js and audit.model.js accessing mutex ([e23a69f](https://github.com/Chia-Network/Core-Registry-CADT/commit/e23a69f2ba10ca620249f472abbaf28f06fb4797))
+* updated org model and sync registries to prevent locking organization table during audit sync ([9a3ad6e](https://github.com/Chia-Network/Core-Registry-CADT/commit/9a3ad6e9ed35f3c70fc0434242f4e63f0ae9ffdb))
+* updated org model and sync registries to prevent locking organization table during audit sync ([690df97](https://github.com/Chia-Network/Core-Registry-CADT/commit/690df97ffffb62bc78228ba3fc21faaf767ef2d6))
+
+
+
 ## [1.7.13](https://github.com/Chia-Network/Core-Registry-CADT/compare/1.7.12...1.7.13) (2024-11-04)
 
 
